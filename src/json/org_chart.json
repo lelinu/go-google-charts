@@ -17,26 +17,10 @@
   },
   {
     "value": {
-      "v": "Gopher",
-      "f": "<i> Gopher </i>"
+      "v": "Golang",
+      "f": "<i> Golang </i>"
     },
     "parent_value": "go-google-charts",
     "row_type": "Ubo"
-  },
-  {
-    "value": {
-      "v": "Gopher Company A",
-      "f": "<i> Gopher Company A </i>"
-    },
-    "parent_value": "Gopher",
-    "row_type": "Ubo Company"
-  },
-  {
-    "value": {
-      "v": "Gopher Company B",
-      "f": "<i> Gopher Company B </i>"
-    },
-    "parent_value": "Gopher",
-    "row_type": "Ubo Company"
   }
 ]
