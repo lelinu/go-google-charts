@@ -1,0 +1,42 @@
+[
+  {
+    "value": {
+      "v": "Lelinu",
+      "f": "<b> Lelinu </b>"
+    },
+    "parent_value": "",
+    "row_type": "Company"
+  },
+  {
+    "value": {
+      "v": "Emanuel Mercieca",
+      "f": "<b> Emanuel Mercieca </b>"
+    },
+    "parent_value": "Lelinu",
+    "row_type": "Director"
+  },
+  {
+    "value": {
+      "v": "Gopher",
+      "f": "<i> Gopher </i>"
+    },
+    "parent_value": "Lelinu",
+    "row_type": "Ubo"
+  },
+  {
+    "value": {
+      "v": "Gopher Company A",
+      "f": "<i> Gopher Company A </i>"
+    },
+    "parent_value": "Gopher",
+    "row_type": "Ubo Company"
+  },
+  {
+    "value": {
+      "v": "Gopher Company B",
+      "f": "<i> Gopher Company B </i>"
+    },
+    "parent_value": "Gopher",
+    "row_type": "Ubo Company"
+  }
+]
