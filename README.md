@@ -8,5 +8,4 @@ go run main.go
 
 The following example will be displayed in localhost:8080
 
-![Company Hierarchy Example](https://raw.githubusercontent.com/lelinu/go-google-charts/master/src/example/org-chart-example.jpg)
-
+<img src="https://raw.githubusercontent.com/lelinu/go-google-charts/master/src/example/org-chart-example.jpg" alt="drawing" width="300"/>
