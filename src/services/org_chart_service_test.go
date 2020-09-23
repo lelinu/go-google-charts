@@ -20,7 +20,7 @@ func TestMain(m *testing.M){
 	orgChartService = NewOrgChartService()
 
 	_, filename, _, _ := runtime.Caller(0)
-	dir := path.Join(path.Dir(filename), "../../")
+	dir := path.Join(path.Dir(filename), "../")
 	fmt.Printf("dir is %v", dir)
 	err := os.Chdir(dir)
 	if err != nil {
