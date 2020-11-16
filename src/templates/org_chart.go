@@ -2,9 +2,12 @@ package templates
 
 var OrgChartTpl = `
 {{- define "org-chart" }}
-<!DOCTYPE html>
-<html>
 <head>
+	<style>
+		#chart_div {
+			width: 900px;
+		}
+	</style>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">
       google.charts.load('current', {packages:["orgchart"]});
@@ -26,28 +29,29 @@ var OrgChartTpl = `
 
 			switch (obj.row_type) {
               case 'Company':
-                dataTable.setRowProperty(rIndex, 'style', 'border: 1px solid green; background: green');
+                dataTable.setRowProperty(rIndex, 'style', 'border: 1px solid #7f7fbf; background: #7f7fbf');
                 break;
 
               case 'Ubo Company':
-                dataTable.setRowProperty(rIndex, 'style', 'border: 1px solid red; background: red');
+                dataTable.setRowProperty(rIndex, 'style', 'border: 1px solid #7f7fbf; background: #7f7fbf');
                 break;
 
               case 'Director':
-                dataTable.setRowProperty(rIndex, 'style', 'border: 1px solid blue; background: blue');
+                dataTable.setRowProperty(rIndex, 'style', 'border: 1px solid #c00; background: #c00');
                 break;
 
               case 'Ubo':
-                dataTable.setRowProperty(rIndex, 'style', 'border: 1px solid yellow; background: yellow');
+                dataTable.setRowProperty(rIndex, 'style', 'border: 1px solid navy; background: navy');
                 break;
             }
 		}
 
         var options = {
-           allowHtml: true
+           'allowHtml': true
         };
         
         // Create the chart.
+ 		var chart_div = document.getElementById('chart_div');
         var chart = new google.visualization.OrgChart(document.getElementById('chart_div'));
         chart.draw(dataTable, options);
       }
@@ -56,7 +60,6 @@ var OrgChartTpl = `
   <body>
     <div id="chart_div"></div>
   </body>
-</html>
 {{ end }}
 `
 

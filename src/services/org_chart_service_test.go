@@ -16,7 +16,7 @@ var (
 	orgChartService IOrgChartService
 )
 
-func TestMain(m *testing.M){
+func TestMain(m *testing.M) {
 	orgChartService = NewOrgChartService()
 
 	_, filename, _, _ := runtime.Caller(0)
@@ -30,7 +30,7 @@ func TestMain(m *testing.M){
 	os.Exit(m.Run())
 }
 
-func TestRenderToWriterValidBytes(t *testing.T){
+func TestRenderToWriterValidBytes(t *testing.T) {
 
 	data, err := utils.BuildJson()
 	assert.Nil(t, err)
