@@ -41,7 +41,7 @@ var OrgChartTpl = `
                 break;
 
               case 'Ubo':
-                dataTable.setRowProperty(rIndex, 'style', 'border: 1px solid navy; background: navy');
+                dataTable.setRowProperty(rIndex, 'style', 'border: 1px solid #4545A4; background: #4545A4');
                 break;
             }
 		}
