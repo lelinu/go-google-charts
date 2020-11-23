@@ -7,7 +7,6 @@ import (
 )
 
 var (
-	renderName      = "org-chart"
 	orgChartService services.IOrgChartService
 )
 
@@ -15,7 +14,7 @@ func init(){
 	orgChartService = services.NewOrgChartService()
 }
 
-func handler(w http.ResponseWriter, _ *http.Request) {
+func orgChartHandler(w http.ResponseWriter, _ *http.Request) {
 
 	data, err := utils.BuildJson()
 	if err != nil{
@@ -24,10 +23,17 @@ func handler(w http.ResponseWriter, _ *http.Request) {
 	}
 
 	obj := map[string]string{"jsonData": data}
-	orgChartService.RenderToWriter(obj, renderName, w)
+	orgChartService.RenderToWriter(obj, "org-chart", w)
+}
+
+func gaugeChartHandler(w http.ResponseWriter, _ *http.Request){
+
+	obj := map[string]float64{"riskAssessmentValue": 1.0}
+	orgChartService.RenderToWriter(obj, "gauge-chart", w)
+
 }
 
 func main(){
-	http.HandleFunc("/", handler)
+	http.HandleFunc("/", gaugeChartHandler)
 	http.ListenAndServe("127.0.0.1:8080", nil)
 }

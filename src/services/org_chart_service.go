@@ -20,7 +20,12 @@ func NewOrgChartService() IOrgChartService {
 
 //renderChart will load the related golang template
 func renderChart(data interface{}, w io.Writer, name string) error {
-	contents := []string{templates.OrgChartTpl}
+	tplName := templates.OrgChartTpl
+	if name == "gauge-chart"{
+		tplName = templates.GaugeTpl
+	}
+
+	contents := []string{tplName}
 
 	tpl := template.Must(template.New("").Parse(contents[0]))
 	return tpl.ExecuteTemplate(w, name, data)
