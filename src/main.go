@@ -34,6 +34,6 @@ func gaugeChartHandler(w http.ResponseWriter, _ *http.Request){
 }
 
 func main(){
-	http.HandleFunc("/", gaugeChartHandler)
+	http.HandleFunc("/", orgChartHandler)
 	http.ListenAndServe("127.0.0.1:8080", nil)
 }

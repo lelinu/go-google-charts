@@ -4,9 +4,36 @@ var OrgChartTpl = `
 {{- define "org-chart" }}
 <head>
 	<style>
-		#chart_div {
-			width: 900px;
-		}
+		.director {
+			  height: 25px;
+			  width: 25px;
+			  background-color: #c00;
+			  border-radius: 50%;
+			  display: inline-block;
+		  }
+
+		.ubo {
+			  height: 25px;
+			  width: 25px;
+			  background-color: #4545A4;
+			  border-radius: 50%;
+			  display: inline-block;
+		  }
+
+		.company {
+			  height: 25px;
+			  width: 25px;
+			  background-color: #7f7fbf;
+			  border-radius: 50%;
+			  display: inline-block;
+		  }
+
+		#legend {
+			margin-left: 20px;
+ 		}
+
+		hr { background-color: #3388dd; height: 1px; border: 0; }
+
 	</style>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">
@@ -37,7 +64,7 @@ var OrgChartTpl = `
                 break;
 
               case 'Director':
-                dataTable.setRowProperty(rIndex, 'style', 'border: 1px solid #c00; background: #c00');
+                dataTable.setRowProperty(rIndex, 'style', 'border: 1px solid #c00; background: #c00;');
                 break;
 
               case 'Ubo':
@@ -47,7 +74,8 @@ var OrgChartTpl = `
 		}
 
         var options = {
-           'allowHtml': true
+           'allowHtml': true,
+           'size': 'small'
         };
         
         // Create the chart.
@@ -56,9 +84,30 @@ var OrgChartTpl = `
         chart.draw(dataTable, options);
       }
     </script>
+	<style type="text/css">
+	   .google-visualization-orgchart-table * {
+			padding: 1px !important
+		}
+
+		.chart_div {
+			display: block;
+			width: 900px;
+ 			overflow: visible !important;
+		}
+</style>
     </head>
   <body>
-    <div id="chart_div"></div>
+    <div id="chart_div" class="chart_div" style="width: 900px;"></div>
+	<hr/>
+	<div id="legend">
+	 <table style="width: 450px"> 
+		<tr> 
+			<td style="width: 30px;"> <span class="director"></span> </td> <td style="width: 70px;"> Director </td> 
+			<td style="width: 30px;"> <span class="ubo"></span> </td> <td style="width: 70px;"> UBO </td> 
+			<td style="width: 30px;"> <span class="company"></span> </td> <td style="width: 70px;"> Company </td> 
+		</tr>
+	 </table>
+</div>
   </body>
 {{ end }}
 `
