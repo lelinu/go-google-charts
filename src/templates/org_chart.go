@@ -86,7 +86,7 @@ var OrgChartTpl = `
     </script>
 	<style type="text/css">
 	   .google-visualization-orgchart-table * {
-			padding: 1px !important
+			padding: 1.5px !important
 		}
 
 		.chart_div {
@@ -100,7 +100,7 @@ var OrgChartTpl = `
     <div id="chart_div" class="chart_div" style="width: 900px;"></div>
 	<hr/>
 	<div id="legend">
-	 <table style="width: 450px"> 
+	 <table cellspacing="0" cellpadding="0" style="width: 450px"> 
 		<tr> 
 			<td style="width: 30px;"> <span class="director"></span> </td> <td style="width: 70px;"> Director </td> 
 			<td style="width: 30px;"> <span class="ubo"></span> </td> <td style="width: 70px;"> UBO </td> 
