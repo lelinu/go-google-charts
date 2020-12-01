@@ -86,29 +86,35 @@ var OrgChartTpl = `
     </script>
 	<style type="text/css">
 	   .google-visualization-orgchart-table * {
-			padding: 1.5px !important
+			padding: 1px !important
 		}
 
-		.chart_div {
-			display: block;
-			width: 900px;
- 			overflow: visible !important;
-		}
-</style>
-    </head>
-  <body>
-    <div id="chart_div" class="chart_div" style="width: 900px;"></div>
-	<hr/>
-	<div id="legend">
-	 <table cellspacing="0" cellpadding="0" style="width: 450px"> 
-		<tr> 
-			<td style="width: 30px;"> <span class="director"></span> </td> <td style="width: 70px;"> Director </td> 
-			<td style="width: 30px;"> <span class="ubo"></span> </td> <td style="width: 70px;"> UBO </td> 
-			<td style="width: 30px;"> <span class="company"></span> </td> <td style="width: 70px;"> Company </td> 
-		</tr>
-	 </table>
+		 .google-visualization-orgchart-node-small {
+            font-size: 0.5em !important;
+        }
+
+        .wrapper {
+            width: 1000px !important;
+            overflow: visible !important;
+        }
+    </style>
+</head>
+<body>
+<div class="wrapper">
+    <div id="chart_div" style="width:1000px"></div>
 </div>
-  </body>
+<hr/>
+<div id="legend">
+    <table cellspacing="0" cellpadding="0" style="width: 300px">
+        <tr>
+            <td style="width: 15px;"> <span class="director"></span> </td> <td style="width: 50px;"> Director </td>
+            <td style="width: 15px;"> <span class="ubo"></span> </td> <td style="width: 50px;"> UBO </td>
+            <td style="width: 15px;"> <span class="company"></span> </td> <td style="width: 50px;"> Company </td>
+        </tr>
+    </table>
+</div>
+</body>
+
 {{ end }}
 `
 

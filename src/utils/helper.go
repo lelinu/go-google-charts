@@ -7,7 +7,7 @@ import (
 )
 
 var (
-	filePath = "json/org_chart_v4.json"
+	filePath = "json/test.json"
 )
 
 func BuildJson() (string, error) {
